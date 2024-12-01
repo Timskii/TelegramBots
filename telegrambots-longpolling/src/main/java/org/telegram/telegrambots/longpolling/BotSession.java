@@ -99,7 +99,7 @@ public class BotSession implements AutoCloseable {
         executeDeleteWebhook();
         return executor.scheduleAtFixedRate(() -> {
             try {
-                log.debug("Getting updates");
+                log.info("Getting updates");
                 List<Update> updates = getUpdatesFromTelegram();
                 log.debug("Received {} updates.", updates.size());
                 // Reset backup with every successful request
